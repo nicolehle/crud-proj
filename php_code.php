@@ -8,11 +8,19 @@
 
 	$db = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 
-	// initialize variables
-	$name = "";
-	$address = "";
-	$id = 0;
-	$update = false;
+	if (!$db) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+
+/*
+	$sql = "INSERT INTO info (name, address) VALUES
+	            ('John', 'Rambo')";
+	if(mysqli_query($db, $sql)){
+	    echo "Records added successfully.";
+	} else{
+	    echo "ERROR: Could not able to execute $sql. " . mysqli_error($db);
+	}
+*/
 
 	if (isset($_POST['save'])) {
 		$name = $_POST['name'];
