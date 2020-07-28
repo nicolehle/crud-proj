@@ -39,7 +39,7 @@
 		header('location: index.php');
 	}
 
-	// UPDATE DATA
+	// UPDATE DATA - Two way codes GET info from index.php
 	if (isset($_POST['update'])) {
 	$id = $_POST['id'];
 	$name = $_POST['name'];
@@ -49,3 +49,11 @@
 	$_SESSION['message'] = "Address updated!";
 	header('location: index.php');
 }
+
+// DELETE DATA
+	if (isset($_GET['del'])) {
+	$id = $_GET['del'];
+	mysqli_query($db, "DELETE FROM info WHERE id=$id");
+	$_SESSION['message'] = "Address deleted!";
+	header('location: index.php');
+	}
