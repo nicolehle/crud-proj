@@ -58,11 +58,11 @@
 		<input type="hidden" name="id" value="<?php echo $id; ?>">
 		<div class="input-group">
 			<label>Name</label>
-			<input type="text" name="name" value="<?php echo $name; ?>">
+			<input type="text" name="name" value="<?php echo $name; ?>" required>
 		</div>
 		<div class="input-group">
 			<label>Address</label>
-			<input type="text" name="address" value="<?php echo $address; ?>">
+			<input type="text" name="address" value="<?php echo $address; ?>" required>
 		</div>
 		<div class="input-group">
 			<?php if ($update == true): ?>
